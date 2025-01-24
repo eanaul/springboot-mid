@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Siswa</title>
+</head>
+<body>
+    <h1>Create Siswa</h1>
+    <form th:action="@{/}" th:object="${dataSiswa}" method="post">
+        <label for="name">Nama</label>
+        <input type="text" id="name" th:field="*{name}" required>
+        <br>
+        <label for="rombel">Rombel</label>
+        <input type="text" id="rombel" th:field="*{rombel}" required>
+        <br>
+        <label for="jenisKelamin">Jenis Kelamin</label>
+        <input type="text" id="jenisKelamin" th:field="*{jenisKelamin}" required>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit Siswa</title>
+</head>
+<body>
+<h1>Edit Siswa</h1>
+<form th:action="@{'/update/' + ${dataSiswa.id}}" th:object="${dataSiswa}" method="post">
+    <label for="name">Nama</label>
+    <input type="text" id="name" th:field="*{name}" th:value="${dataSiswa.name}" required>
+    <br />
+    <label for="rombel">Rombel</label>
+    <input type="text" id="rombel" th:field="*{rombel}" th:value="${dataSiswa.rombel}" required>
+    <br />
+    <label for="jenisKelamin">Jenis Kelamin</label>
+    <input type="text" id="jenisKelamin" th:field="*{jenisKelamin}" th:value="${dataSiswa.jenisKelamin}" required>
+    <br />
+    <button type="submit">Update</button>
+</form>
+</body>
+</hmtl>
