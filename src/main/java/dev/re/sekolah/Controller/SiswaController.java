@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/siswa")
 public class SiswaController {
     private final SiswaService siswaService;
 
@@ -23,7 +24,7 @@ public class SiswaController {
     @PostMapping
     public String saveSiswa(@ModelAttribute Siswa siswa){
         siswaService.createSiswa(siswa);
-        return "redirect:/";
+        return "redirect:/siswa/";
     }
 
     @GetMapping("/")
@@ -43,13 +44,13 @@ public class SiswaController {
     public String updateSiswa(@PathVariable Integer id, @ModelAttribute Siswa siswa){
         siswa.setId(id);
         siswaService.createSiswa(siswa);
-        return "redirect:/";
+        return "redirect:/siswa/";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteSiswa(@PathVariable Integer id){
         siswaService.deleteSiswaById(id);
-        return "redirect:/";
+        return "redirect:/siswa/";
     }
 
 
